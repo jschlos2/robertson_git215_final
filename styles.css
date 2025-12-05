@@ -1,0 +1,282 @@
+/* ---------------------------------------------------------- */
+/* CSS Reset (recommended)                                     */
+/* ---------------------------------------------------------- */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+/* ---------------------------------------------------------- */
+/* Root Variables — Soft Blues + Cream + Romantic Typography   */
+/* ---------------------------------------------------------- */
+:root {
+    --cream: #f7f4ed;
+    --lt-blue: #d7e6f2;
+    --med-blue: #97bcd3;
+    --dk-blue: #507c9b;
+    --navy: #2f4c61;
+
+    --text: #1f1f1f;
+    --white: #ffffff;
+
+    --accent: var(--dk-blue);
+
+    --romantic-font: "Playfair Display", Georgia, serif;
+    --body-font: "Lora", Georgia, serif;
+}
+
+/* ---------------------------------------------------------- */
+/* Base Styles                                                 */
+/* ---------------------------------------------------------- */
+body {
+    background-color: var(--cream);
+    color: var(--text);
+    font-family: var(--body-font);
+    line-height: 1.65;
+    padding-bottom: 4rem;
+}
+
+.wrapper {
+    width: 1280px;
+    margin: 0 auto;
+}
+
+/* ---------------------------------------------------------- */
+/* Header                                                      */
+/* ---------------------------------------------------------- */
+header {
+    background-color: var(--lt-blue);
+    padding: 2rem 0 1.5rem 0;
+    border-bottom: 4px solid var(--med-blue);
+}
+
+header h1 a {
+    font-family: var(--romantic-font);
+    font-size: 2.6rem;
+    text-decoration: none;
+    color: var(--navy);
+}
+
+header figure {
+    margin-top: 1.75rem;
+}
+
+header figure img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+}
+
+/* ---------------------------------------------------------- */
+/* Navigation                                                  */
+/* ---------------------------------------------------------- */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--navy);
+    font-size: 1.15rem;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+}
+
+/* Link states */
+nav a:hover {
+    background-color: var(--med-blue);
+    color: var(--white);
+}
+
+nav a:focus {
+    outline: 2px solid var(--dk-blue);
+}
+
+nav a.active {
+    font-weight: bold;
+    border-bottom: 2px solid var(--dk-blue);
+}
+
+/* ---------------------------------------------------------- */
+/* Typography                                                  */
+/* ---------------------------------------------------------- */
+h2 {
+    font-family: var(--romantic-font);
+    font-size: 2.1rem;
+    color: var(--navy);
+    margin-bottom: 1.2rem;
+}
+
+p {
+    font-size: 1.12rem;
+    margin-bottom: 1rem;
+}
+
+/* ---------------------------------------------------------- */
+/* Section Spacing — Matches Your Wireframes                   */
+/* ---------------------------------------------------------- */
+section {
+    margin: 3.5rem 0;
+    padding: 0 1rem;
+}
+
+/* ---------------------------------------------------------- */
+/* FIRST SECTION — Image left, text center, text + radios right*/
+/* ---------------------------------------------------------- */
+section:first-of-type {
+    display: grid;
+    grid-template-columns: 1fr 380px 1fr;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+/* Center text block */
+section:first-of-type > div:nth-of-type(1) {
+    padding-right: 1rem;
+}
+
+/* Side image block */
+section:first-of-type figure img {
+    border-radius: 8px;
+    width: 100%;
+}
+
+/* Right text block */
+section:first-of-type > div:nth-of-type(2) p {
+    margin-bottom: 0.75rem;
+}
+
+/* Radio form (wireframe vertical alignment) */
+section:first-of-type form {
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+section:first-of-type label {
+    font-size: 1.05rem;
+}
+
+/* ---------------------------------------------------------- */
+/* Horizontal Rule                                             */
+/* ---------------------------------------------------------- */
+hr {
+    height: 2px;
+    background-color: var(--med-blue);
+    border: none;
+    margin: 3.5rem 0;
+}
+
+/* ---------------------------------------------------------- */
+/* SECOND SECTION — Title, paragraphs, two images, caption     */
+/* ---------------------------------------------------------- */
+.two-columns {
+    margin-top: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+figure img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+figcaption {
+    margin-top: 0.6rem;
+    font-size: 1rem;
+    color: var(--navy);
+    font-style: italic;
+    text-align: center;
+}
+
+/* ---------------------------------------------------------- */
+/* Form Styling — Contact Page                                */
+/* ---------------------------------------------------------- */
+form {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+label {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+input,
+textarea {
+    padding: 0.9rem;
+    border: 2px solid var(--med-blue);
+    border-radius: 6px;
+    font-family: var(--body-font);
+    font-size: 1rem;
+    background-color: var(--white);
+}
+
+/* Required pseudo-states */
+input:focus,
+textarea:focus {
+    outline: 2px solid var(--dk-blue);
+}
+
+input:invalid,
+textarea:invalid {
+    border-color: #c04242;
+}
+
+/* Submit button */
+button {
+    padding: 0.9rem 1.4rem;
+    font-size: 1.15rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: var(--dk-blue);
+    color: var(--white);
+    font-family: var(--romantic-font);
+}
+
+button:hover {
+    background-color: var(--navy);
+}
+
+button:focus {
+    outline: 3px solid var(--med-blue);
+}
+
+/* ---------------------------------------------------------- */
+/* Footer                                                      */
+/* ---------------------------------------------------------- */
+footer {
+    background-color: var(--lt-blue);
+    padding: 2.5rem 0;
+    text-align: center;
+    border-top: 4px solid var(--med-blue);
+}
+
+footer p {
+    font-size: 1rem;
+}
